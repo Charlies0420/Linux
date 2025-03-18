@@ -1086,12 +1086,12 @@ root.bind('<Return>', send)  # Bind ENTER to send information
 
 
 # --------------------------------------AI聊天-----------------------------------------
-
+#需要加入自己的API
 # 调用API
-def call_ali_api_chat(model='qwen2-72b-instruct', temperature=0.5, top_p=0.5, max_tokens=1000,
+def call_ali_api_chat(model='', temperature=0.5, top_p=0.5, max_tokens=1000,
                  bot_content='你现在是一个聊天助手，只需要简单回复即可', user_content=''):
     headers = {
-        "Authorization": "Bearer sk-vu3xpjzta7",
+        "Authorization":      #需要加入自己的API
         "Content-Type": "application/json"
     }
     req = {
@@ -1114,7 +1114,7 @@ def call_ali_api_chat(model='qwen2-72b-instruct', temperature=0.5, top_p=0.5, ma
     try:
         # 发送POST请求
         response = requests.post(
-            'https://dashscope.aliyuncs.com/api/v1/services/aigc/text-generation/generation',
+            #需要加入自己的API
             data=json.dumps(req),
             headers=headers
         )
@@ -1132,10 +1132,11 @@ def call_ali_api_chat(model='qwen2-72b-instruct', temperature=0.5, top_p=0.5, ma
 
     return result
 
-def call_ali_api_outline(model='qwen2-72b-instruct', temperature=0.1, top_p=0.1, max_tokens=1000,
+#需要加入自己的API
+def call_ali_api_outline(model=', temperature=0.1, top_p=0.1, max_tokens=1000,
                  bot_content='你现在是一个会话助手，只需要针对聊天内容，进行会话内容的总结，而不需要关注人名时间等无用消息，只需要根据人名简单的区分一下人物即可。只需要看聊天的内容！', user_content=''):
     headers = {
-        "Authorization": "Bearer sk-vu3xpjzta7",
+        "Authorization": "",          #需要加入自己的API
         "Content-Type": "application/json"
     }
     req = {
@@ -1158,7 +1159,7 @@ def call_ali_api_outline(model='qwen2-72b-instruct', temperature=0.1, top_p=0.1,
     try:
         # 发送POST请求
         response = requests.post(
-            'https://dashscope.aliyuncs.com/api/v1/services/aigc/text-generation/generation',
+            '',               #需要加入自己的API
             data=json.dumps(req),
             headers=headers
         )
